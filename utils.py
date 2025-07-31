@@ -1,4 +1,5 @@
 import threading
+import time
 
 class LamportClock:
     def __init__(self):
@@ -14,4 +15,4 @@ class LamportClock:
             self.time = max(self.time, received_time)
 
 def log_event(message):
-    print(message)
+    print(f"[{time.strftime('%H:%M:%S')}] {message}")
